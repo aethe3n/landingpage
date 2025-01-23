@@ -26,7 +26,7 @@ export default function ComingSoon() {
                 </span>
               </h1>
               <p className="text-xl text-white/90 mb-8">
-                We&apos;re working hard to bring you something amazing.
+                We are working hard to bring you something amazing.
               </p>
               <Link href="/">
                 <Button className="glass text-lg px-8 py-4 relative group overflow-hidden">

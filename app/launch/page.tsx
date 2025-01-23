@@ -26,14 +26,14 @@ export default function ComingSoon() {
                 </span>
               </h1>
               <p className="text-xl text-white/90 mb-8">
-                We're working hard to bring you something amazing.
+                We&apos;re working hard to bring you something amazing.
               </p>
               <Link href="/">
                 <Button className="glass text-lg px-8 py-4 relative group overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-[#98E4E1]/20 to-[#FF9E9E]/20 group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/10" />
                   <div className="relative z-10 flex items-center gap-2">
-                    Return Home <span className="opacity-80">→</span>
+                    Return Home <span className="opacity-80">&rarr;</span>
                   </div>
                   <div className="absolute -inset-1 group-hover:opacity-100 opacity-0 transition-opacity duration-300 blur-lg bg-gradient-to-r from-[#98E4E1]/30 to-[#FF9E9E]/30" />
                 </Button>

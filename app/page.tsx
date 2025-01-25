@@ -88,16 +88,14 @@ export default function Page() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Link href="/launch">
-                      <Button className="glass text-lg px-8 py-4 relative group overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#98E4E1]/20 to-[#FF9E9E]/20 group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/10" />
-                        <div className="relative z-10 flex items-center gap-2">
-                          Launch App <span className="opacity-80">→</span>
-                        </div>
-                        <div className="absolute -inset-1 group-hover:opacity-100 opacity-0 transition-opacity duration-300 blur-lg bg-gradient-to-r from-[#98E4E1]/30 to-[#FF9E9E]/30" />
-                      </Button>
-                    </Link>
+                    <Button
+                      className="bg-gradient-to-r from-[#98E4E1] to-[#FF9E9E] text-black font-semibold px-8 py-6 text-lg rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#98E4E1]/20"
+                      asChild
+                    >
+                      <Link href="/app">
+                        Launch App →
+                      </Link>
+                    </Button>
                   </motion.div>
                 </div>
               </motion.div>

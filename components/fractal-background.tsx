@@ -52,7 +52,7 @@ export function FractalBackground() {
       ctx.beginPath()
       const petals = 6
       const points = 360
-      
+
       for (let i = 0; i <= points; i++) {
         const angle = (i * Math.PI * 2) / points
         const r = radius * scale * Math.sin(petals * (angle + rotation))
@@ -105,7 +105,7 @@ export function FractalBackground() {
         // Smoother movement
         circle.x += Math.cos(time * 0.0005 + circle.rotation) * 0.3
         circle.y += Math.sin(time * 0.0005 + circle.rotation) * 0.3
-        
+
         // Wrap around screen with buffer
         const buffer = circle.radius * 2
         if (circle.x < -buffer) circle.x = canvas.width + buffer

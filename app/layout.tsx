@@ -5,8 +5,26 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AetherMind - Web3 AI Companion for DeFi Optimization",
-  description: "Experience the future of decentralized AI with AetherMind. Seamlessly integrate intelligent decision-making into your Web3 ecosystem.",
+  title: "AetherMind - Web3 AI Companion",
+  description: "Your Web3 AI Companion for DeFi Optimization",
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/icon.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+    ],
+    apple: {
+      url: "/apple-icon.png",
+      type: "image/png",
+      sizes: "180x180",
+    },
+  },
 };
 
 export default function RootLayout({

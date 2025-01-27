@@ -1,5 +1,6 @@
 'use client'
 
+import React from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Features } from "@/components/features"
@@ -9,6 +10,11 @@ import { Footer } from "@/components/footer"
 import { FractalBackground } from "@/components/fractal-background"
 import { TypingAnimation } from "@/components/typing-animation"
 import { motion } from "framer-motion"
+import Image from "next/image"
+import { ParticleBackground } from "@/components/particle-background"
+import { ScrollProgress } from "@/components/scroll-progress"
+import { TiltCard } from "@/components/tilt-card"
+import { Brain, Users, Zap, Network } from "lucide-react"
 
 // Section Heading Component
 function SectionHeading({ children }: { children: React.ReactNode }) {
@@ -28,10 +34,53 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   )
 }
 
+const navigation = [
+  { name: "Features", href: "#features" },
+  { name: "How It Works", href: "#how-it-works" },
+  { name: "Roadmap", href: "#roadmap" },
+  { name: "Litepaper", href: "/litepaper" },
+]
+
+interface Feature {
+  name: string;
+  description: string;
+  icon: React.ElementType;
+  action: string;
+}
+
+const features: Feature[] = [
+  {
+    name: "AI Agent Deployment",
+    description: "Connect your Web3 wallet and deploy your own autonomous AI agents to execute custom operations and strategies.",
+    icon: Brain,
+    action: "Deploy your personal agent"
+  },
+  {
+    name: "Squad Integration",
+    description: "Configure your agent teams with advanced collaboration features ensuring optimal performance and seamless coordination.",
+    icon: Users,
+    action: "Set up squad preferences"
+  },
+  {
+    name: "Lightning Fast",
+    description: "Experience real-time market analysis and instant trade execution powered by cutting-edge AI technology.",
+    icon: Zap,
+    action: "View performance metrics"
+  },
+  {
+    name: "Decentralized Network",
+    description: "Leverage the power of decentralized infrastructure for enhanced security and reliability.",
+    icon: Network,
+    action: "Explore the network"
+  }
+];
+
 export default function Page() {
   return (
     <div className="relative flex flex-col min-h-screen">
+      <ParticleBackground />
       <FractalBackground />
+      <ScrollProgress />
       
       <div className="relative z-10">
         {/* Navigation */}
@@ -49,13 +98,13 @@ export default function Page() {
               <span className="text-xl font-bold text-white">AetherMind</span>
             </Link>
             <nav className="hidden md:flex gap-8">
-              {["Features", "How It Works", "Roadmap"].map((item) => (
+              {navigation.map((item) => (
                 <Link
-                  key={item}
-                  href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
+                  key={item.name}
+                  href={item.href}
                   className="relative text-white/80 hover:text-white transition-colors group"
                 >
-                  {item}
+                  {item.name}
                   <span className="absolute inset-x-0 -bottom-1 h-px bg-gradient-to-r from-[#98E4E1] to-[#FF9E9E] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 </Link>
               ))}
@@ -102,8 +151,54 @@ export default function Page() {
             </div>
           </section>
 
-          {/* Features Section */}
-          <Features />
+          {/* Features Section with Tilt Cards */}
+          <section id="features" className="py-24 relative overflow-hidden">
+            <div className="absolute inset-0 geometric-pattern opacity-5" />
+            
+            <div className="container mx-auto px-4">
+              <div className="relative">
+                <div className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-3xl -m-4" />
+                <div className="relative space-y-8">
+                  <SectionHeading>Powerful Features & Workflow</SectionHeading>
+
+                  <div className="text-center mb-16">
+                    <p className="text-gray-400 text-lg">
+                      Discover how AetherMind revolutionizes Web3 with cutting-edge AI technology
+                    </p>
+                  </div>
+
+                  <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+                    {features.map((feature) => (
+                      <TiltCard key={feature.name}>
+                        <div className="feature-card group p-6 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-colors">
+                          <div className="flex flex-col items-center text-center space-y-4">
+                            <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-500/20 to-pink-500/20">
+                              {React.createElement(feature.icon, { className: "w-10 h-10 text-white" })}
+                            </div>
+                            <h3 className="text-xl font-semibold bg-gradient-to-r from-cyan-200 to-pink-200 bg-clip-text text-transparent">
+                              {feature.name}
+                            </h3>
+                            <p className="text-gray-400">
+                              {feature.description}
+                            </p>
+                            <Link 
+                              href={feature.name === "AI Agent Deployment" ? "/deploy" : 
+                                    feature.name === "Squad Integration" ? "/squad" :
+                                    feature.name === "Decentralized Network" ? "/explore" :
+                                    feature.name === "Lightning Fast" ? "/metrics" : "#"}
+                              className="mt-4 px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500/10 to-pink-500/10 hover:from-cyan-500/20 hover:to-pink-500/20 border border-white/10 hover:border-white/20 transition-all duration-300"
+                            >
+                              {feature.action}
+                            </Link>
+                          </div>
+                        </div>
+                      </TiltCard>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* How It Works Section */}
           <HowItWorks />

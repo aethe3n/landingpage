@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Twitter, DiscIcon as Discord, Github } from 'lucide-react'
+import { Twitter, MessageCircle, Github } from "lucide-react"
 
 export function Footer() {
   return (
@@ -38,8 +38,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="hover:text-[#98e4e1]">
-                  About Us
+                <Link href="/litepaper" className="hover:text-[#98e4e1]">
+                  Litepaper
                 </Link>
               </li>
             </ul>
@@ -47,15 +47,30 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Connect</h3>
             <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-[#98e4e1]">
+              <Link 
+                href="https://x.com/AetherMINDspace" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#98e4e1]"
+              >
                 <Twitter className="h-6 w-6" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-[#98e4e1]">
-                <Discord className="h-6 w-6" />
-                <span className="sr-only">Discord</span>
+              <Link 
+                href="https://t.me/AetherMINDofficial" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#98e4e1]"
+              >
+                <MessageCircle className="h-6 w-6" />
+                <span className="sr-only">Telegram</span>
               </Link>
-              <Link href="#" className="text-gray-400 hover:text-[#98e4e1]">
+              <Link 
+                href="https://github.com/aethe3n" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#98e4e1]"
+              >
                 <Github className="h-6 w-6" />
                 <span className="sr-only">GitHub</span>
               </Link>
@@ -77,7 +92,7 @@ export function Footer() {
         </div>
         <div className="mt-12 border-t border-gray-800 pt-8 text-center">
           <p className="text-sm text-gray-400">
-            © 2025 AetherMind. All rights reserved.
+            © 2024 AetherMind. All rights reserved.
           </p>
         </div>
       </div>

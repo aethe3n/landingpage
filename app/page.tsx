@@ -133,19 +133,35 @@ export default function Page() {
                     Experience the future of decentralized AI with AetherMind. Seamlessly integrate
                     intelligent decision-making into your Web3 ecosystem.
                   </p>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Button
-                      className="bg-gradient-to-r from-[#98E4E1] to-[#FF9E9E] text-black font-semibold px-8 py-6 text-lg rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#98E4E1]/20"
-                      asChild
+                  <div className="flex flex-col gap-4 items-center">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      <Link href="/app">
-                        Launch App →
-                      </Link>
-                    </Button>
-                  </motion.div>
+                      <Button
+                        className="bg-gradient-to-r from-[#98E4E1] to-[#FF9E9E] text-black font-semibold px-8 py-6 text-lg rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#98E4E1]/20"
+                        asChild
+                      >
+                        <Link href="/app">
+                          Launch App →
+                        </Link>
+                      </Button>
+                    </motion.div>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Button
+                        variant="outline"
+                        className="border-white/10 hover:border-white/20 text-white font-semibold px-8 py-6 text-lg rounded-xl hover:scale-105 transition-all duration-300"
+                        asChild
+                      >
+                        <Link href="/litepaper">
+                          Read Litepaper
+                        </Link>
+                      </Button>
+                    </motion.div>
+                  </div>
                 </div>
               </motion.div>
             </div>

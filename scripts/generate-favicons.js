@@ -9,7 +9,12 @@ async function generateFavicons() {
   await sharp(svgBuffer)
     .resize(32, 32)
     .toFormat('png')
-    .toFile('public/icon.png');
+    .toBuffer()
+    .then(async (data) => {
+      // Save as both .ico and .png
+      await fs.writeFile('public/favicon.ico', data);
+      await fs.writeFile('public/icon.png', data);
+    });
   
   // Generate apple-touch-icon (180x180)
   await sharp(svgBuffer)

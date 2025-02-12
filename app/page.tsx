@@ -35,6 +35,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 }
 
 const navigation = [
+  { name: "AetherMind AI", href: "/aethermindai" },
   { name: "Features", href: "#features" },
   { name: "How It Works", href: "#how-it-works" },
   { name: "Roadmap", href: "#roadmap" },
@@ -164,6 +165,83 @@ export default function Page() {
                   </div>
                 </div>
               </motion.div>
+            </div>
+          </section>
+
+          {/* AetherMind AI Section */}
+          <section className="py-24 relative overflow-hidden">
+            <div className="absolute inset-0 geometric-pattern opacity-5" />
+            
+            <div className="container mx-auto px-4">
+              <div className="relative">
+                <div className="absolute inset-0 bg-black/30 backdrop-blur-md rounded-3xl -m-4" />
+                <div className="relative space-y-8">
+                  <SectionHeading>AetherMind AI Assistant</SectionHeading>
+
+                  <div className="text-center mb-16">
+                    <p className="text-gray-400 text-lg">
+                      Experience the power of AI-driven market analysis and insights
+                    </p>
+                  </div>
+
+                  <div className="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                      className="flex flex-col justify-center space-y-6"
+                    >
+                      <h3 className="text-3xl font-semibold text-white">
+                        Your Intelligent Market Companion
+                      </h3>
+                      <p className="text-gray-400 text-lg leading-relaxed">
+                        AetherMind AI combines real-time market data, advanced analytics, and natural language processing to provide you with actionable insights and market intelligence.
+                      </p>
+                      <ul className="space-y-4">
+                        <li className="flex items-center gap-3 text-white/90">
+                          <div className="h-2 w-2 rounded-full bg-gradient-to-r from-[#98E4E1] to-[#FF9E9E]" />
+                          Real-time market analysis and insights
+                        </li>
+                        <li className="flex items-center gap-3 text-white/90">
+                          <div className="h-2 w-2 rounded-full bg-gradient-to-r from-[#98E4E1] to-[#FF9E9E]" />
+                          Natural language interaction
+                        </li>
+                        <li className="flex items-center gap-3 text-white/90">
+                          <div className="h-2 w-2 rounded-full bg-gradient-to-r from-[#98E4E1] to-[#FF9E9E]" />
+                          Data-driven predictions and forecasts
+                        </li>
+                      </ul>
+                      <div className="pt-4">
+                        <Button
+                          className="bg-gradient-to-r from-[#98E4E1] to-[#FF9E9E] text-black font-semibold px-8 py-6 text-lg rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#98E4E1]/20"
+                          asChild
+                        >
+                          <Link href="/aethermindai">
+                            Try AetherMind AI →
+                          </Link>
+                        </Button>
+                      </div>
+                    </motion.div>
+
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                      className="relative"
+                    >
+                      <div className="aspect-video rounded-2xl overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#98E4E1]/20 to-[#FF9E9E]/20 backdrop-blur-sm" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#98E4E1] to-[#FF9E9E] animate-pulse" />
+                        </div>
+                        <div className="absolute inset-0 bg-geometric-pattern opacity-10" />
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 

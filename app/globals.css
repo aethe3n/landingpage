@@ -133,6 +133,16 @@
   animation: spin-slow 20s linear infinite;
 }
 
+/* Loading Animation */
+.loader-flower {
+  transform-origin: center;
+  animation: spin-slow 4s linear infinite;
+}
+
+.loader-inner {
+  animation: pulse 2s ease-in-out infinite;
+}
+
 /* Brand Colors */
 .brand-gradient {
   @apply bg-gradient-to-r from-[#98E4E1] to-[#FF9E9E];
